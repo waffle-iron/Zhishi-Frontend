@@ -1,16 +1,16 @@
-import React from 'react'
-import AnswerActions from '../../actions/AnswerActions.js'
-import webAPI from '../../utils/webAPI.js'
-import AuthStore from '../../stores/AuthStore.js'
-import Votes from "../layouts/Votes.react"
-import Comments from '../comments/Index.react.js'
-import Common from "../../utils/Common"
-import ShareButton from "../layouts/ShareButton.react"
+import React from 'react';
+import AnswerActions from '../../actions/AnswerActions.js';
+import webAPI from '../../utils/webAPI.js';
+import AuthStore from '../../stores/AuthStore.js';
+import Votes from '../layouts/Votes.react';
+import Comments from '../comments/Index.react.js';
+import Common from '../../utils/Common';
+import ShareButton from '../layouts/ShareButton.react';
 
 
 class AllAnswers extends React.Component {
-  constructor(props, context){
-    super(props)
+  constructor(props, context) {
+    super(props);
    }
 
    componentDidMount()  {

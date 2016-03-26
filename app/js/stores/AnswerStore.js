@@ -2,8 +2,8 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var ZhishiConstants = require('../constants/ZhishiConstants');
 var assign = require('object-assign');
-import QuestionStore from './QuestionStore.js'
-import Common from '../utils/Common.js'
+import QuestionStore from './QuestionStore.js';
+import Common from '../utils/Common.js';
 
 
 var CHANGE_EVENT = 'change';

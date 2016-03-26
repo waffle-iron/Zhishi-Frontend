@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import createBrowserHistory from 'history/lib/createBrowserHistory'
-import { Router, Route, IndexRoute, Link, IndexLink } from 'react-router'
+import {Router, Route, IndexRoute, Link, IndexLink } from 'react-router';
 
 import AuthStore from './stores/AuthStore.js';
 import AuthActions from './actions/AuthActions.js'
@@ -21,7 +21,7 @@ import QuestionIndex from './components/questions/Index.react';
 import NewQuestion from './components/questions/New.react';
 import Question from './components/questions/Show.react';
 
-$.cookie.json = true
+$.cookie.json = true;
 
 let user_logged_in = function(nextState, replaceState) {
   if (!AuthStore.userLoggedIn()) {

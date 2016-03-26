@@ -1,12 +1,12 @@
-import React from 'react'
-import webAPI from '../../utils/webAPI.js'
-import AnswerActions from '../../actions/AnswerActions.js'
-import Common from "../../utils/Common"
+import React from 'react';
+import webAPI from '../../utils/webAPI.js';
+import AnswerActions from '../../actions/AnswerActions.js';
+import Common from '../../utils/Common';
 
 class NewAnswerForm extends React.Component {
-  constructor(props, context){
-    super(props)
-   }
+  constructor(props, context) {
+    super(props);
+  }
 
    componentDidMount(){
      Common.initTinyMceContent('.new-answer');

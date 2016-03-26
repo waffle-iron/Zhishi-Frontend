@@ -1,6 +1,6 @@
-var Common
+var Common;
 import Assign from 'object-assign';
-import Config from '../config/environment.js'
+import Config from '../config/environment.js';
 
 Common = {
   initTinyMceContent: function(resource_class){

@@ -69,6 +69,7 @@ let QuestionStore = assign({}, EventEmitter.prototype, {
   },
 
   getPageMapping: (page) => {
+    debugger;
     return page_mapping[page];
   },
 
