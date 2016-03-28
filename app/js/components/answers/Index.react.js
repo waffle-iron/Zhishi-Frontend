@@ -35,7 +35,14 @@ export default class AllAnswers extends React.Component {
    }
    _onChange() {
 
-     this.setState(getAnswersState(this.props.question_id))
+     this.setState(getAnswersState(this.props.question_id), this.initAnswersComponent)
+   }
+
+
+   initAnswersComponent(){
+     Prism.highlightAll();
+     // tinyMCE.activeEditor.setContent('');
+     Common.initTinyMceContent('.answer');
    }
 
    render() {
