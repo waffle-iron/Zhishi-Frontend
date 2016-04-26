@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for utils/Common.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">utils/</a> Common.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.97% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>11/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.24% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>5/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.88% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/50</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">1 statement, 2 branches</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128</td><td class="line-coverage quiet"><span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var Common;
+import Assign from 'object-assign';
+import Config from '../config/environment.js';<span class="branch-0 cbranch-no" title="branch not covered" ></span>
+&nbsp;
+Common = {
+  initTinyMceContent: <span class="fstat-no" title="function not covered" >function(resource_class){</span>
+<span class="cstat-no" title="statement not covered" >    tinymce.init({</span>
+      selector: `${resource_class}.editor-content`,
+      menubar: 'edit insert view format table tools',
+      // menubar: false,
+      toolbar: "bold italic blockquote | codesample link | bullist numlist | forecolor backcolor | undo redo | emoticons ",
+      plugins: ["link image wordcount spellchecker insertdatetime codesample code textpattern autosave autolink textcolor colorpicker emoticons"],
+      textpattern_patterns: [
+         {start: '_', end: '_', format: 'italic'},
+         {start: '*', end: '*', format: 'bold'},
+         {start: '#', format: 'h1'},
+         {start: '##', format: 'h2'},
+         {start: '###', format: 'h3'},
+         {start: '####', format: 'h4'},
+         {start: '#####', format: 'h5'},
+         {start: '######', format: 'h6'},
+         {start: '`', end: '`', format: 'code'},
+         {start: '```', end: '```', format: 'blockquote'},
+         {start: '1. ', cmd: 'InsertOrderedList'},
+         {start: '* ', cmd: 'InsertUnorderedList'},
+         {start: '- ', cmd: 'InsertUnorderedList'}
+      ],
+      content_css: "/assets/css/tinymce.custom.css"
+    })
+  },
+&nbsp;
+  initTinyMceTitle:(<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    tinymce.init({</span>
+      selector: ".editor-title",
+      inline: true,
+      toolbar: "undo redo",
+      plugins: [],
+      menubar: false,
+      custom_shortcuts : false
+    })
+  },
+&nbsp;
+  removeTinyMce: <span class="fstat-no" title="function not covered" >(resource_class) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    tinyMCE.remove(`${resource_class}[class*="editor-"]`)</span>
+  },
+&nbsp;
+  serializeByKey: <span class="fstat-no" title="function not covered" >(array, key) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    var collection = {};</span>
+<span class="cstat-no" title="statement not covered" >    array.map(<span class="fstat-no" title="function not covered" >item =&gt; Common.update(collection, item[ke<span class="cstat-skip" title="statement not covered" ></span>y || 'id'], item))</span></span>
+<span class="cstat-no" title="statement not covered" >    return collection;</span>
+  },
+&nbsp;
+  update: <span class="fstat-no" title="function not covered" >(collection, id, updates, dont_reset_status) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    collection = collection ? collection : {}</span>
+<span class="cstat-no" title="statement not covered" >    collection[id] = Assign({}, collection[id], updates);</span>
+<span class="cstat-no" title="statement not covered" >    if (!dont_reset_status) {<span class="cstat-no" title="statement not covered" >collection[id]['status'] = ''; </span>}</span>
+<span class="cstat-no" title="statement not covered" >    return collection;</span>
+  },
+&nbsp;
+  createPermalink: <span class="fstat-no" title="function not covered" >(id, title) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    var sanitized_string = title.replace(/[^\w\s]/gi, '')</span>
+<span class="cstat-no" title="statement not covered" >    var max_length = 100;</span>
+<span class="cstat-no" title="statement not covered" >    var trimmed_string = sanitized_string.substring(0, max_length);</span>
+<span class="cstat-no" title="statement not covered" >    if (sanitized_string.length &gt; max_length) {</span>
+<span class="cstat-no" title="statement not covered" >      sanitized_string = sanitized_string.substring(0, trimmed_string.lastIndexOf(' '))</span>
+    }
+<span class="cstat-no" title="statement not covered" >    sanitized_string = sanitized_string.trim().replace(/\s/g, "-");</span>
+<span class="cstat-no" title="statement not covered" >    return `${id}-${sanitized_string}`;</span>
+  },
+&nbsp;
+  sanitizeString: <span class="fstat-no" title="function not covered" >(text) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return text.replace(/&lt;(?:.|\n)*?&gt;/gm, '')</span>
+  },
+&nbsp;
+  sendToSlack: <span class="fstat-no" title="function not covered" >(meta) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    let general_data = Common.slackData(meta, meta.intro.general);</span>
+<span class="cstat-no" title="statement not covered" >    let personal_data = Common.slackData(meta, meta.intro.personal);</span>
+<span class="cstat-no" title="statement not covered" >    Common.pushAtMentionsToSlack(meta, general_data, personal_data)</span>
+<span class="cstat-no" title="statement not covered" >    general_data = JSON.stringify(general_data);</span>
+<span class="cstat-no" title="statement not covered" >    $.ajax({url: Config.slackZhishiChannel, type: 'POST', data: general_data });</span>
+  },
+&nbsp;
+  slackData: <span class="fstat-no" title="function not covered" >(meta, fallback) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    let permalink = `http://${window.location.host}/questions/${Common.createPermalink(meta.id || 2, meta.title)}`</span>
+<span class="cstat-no" title="statement not covered" >    let text = Common.sanitizeString(meta.content);</span>
+<span class="cstat-no" title="statement not covered" >    text = text.length &gt; 100 ? text.substring(0, 100) + "..." : text</span>
+<span class="cstat-no" title="statement not covered" >    let pretext = fallback;</span>
+<span class="cstat-no" title="statement not covered" >    let color = "#666";</span>
+<span class="cstat-no" title="statement not covered" >    let fields = [{title: 'The question', value: `&lt;${permalink}|${meta.title}&gt;`, short: 'false'}]</span>
+<span class="cstat-no" title="statement not covered" >    return { username: Config.slackHookName, attachments: [{</span>
+        fallback: fallback, pretext: pretext, color: color, text: text, fields: fields
+    }]}
+  },
+&nbsp;
+  replaceAtMentionsWithLinks: <span class="fstat-no" title="function not covered" >(text) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    var link_end = "&lt;/a&gt;", mentionIndex, tailingLinkIndex;</span>
+<span class="cstat-no" title="statement not covered" >    return text.replace(Common.mentionsRegex(), <span class="fstat-no" title="function not covered" >function(mention, contents, offset, str){</span></span>
+<span class="cstat-no" title="statement not covered" >      mentionIndex = offset + mention.length;</span>
+<span class="cstat-no" title="statement not covered" >      tailingLinkIndex = mentionIndex + link_end.length;</span>
+<span class="cstat-no" title="statement not covered" >      if (Common.should_replace_link(str, mentionIndex, text, tailingLinkIndex, link_end)) {</span>
+<span class="cstat-no" title="statement not covered" >        return `&lt;a href="https://andela.slack.com/messages/${mention}/team/${contents}" target="_blank"&gt;${mention}&lt;/a&gt;`</span>
+      }<span class="cstat-no" title="statement not covered" > else { return m</span>ention }
+    })
+  },
+&nbsp;
+  should_replace_link: <span class="fstat-no" title="function not covered" >(str, mentionIndex, text, tailingLinkIndex, link_end) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return (((str[mentionIndex] || "").match(/[;&lt;]/g) || []).length == 0 &amp;&amp; ((text.length &lt; tailingLinkIndex) || (text.substring(tailingLinkIndex - link_end.length, tailingLinkIndex) != link_en</span>d)))
+  },
+&nbsp;
+  mentionsRegex: <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return /[@|#]([a-z\d_.-]+)/ig</span>
+  },
+&nbsp;
+  pushAtMentionsToSlack: <span class="fstat-no" title="function not covered" >(meta, general, personal) =&gt; {</span>
+    // meta.content += " #zhishi_feedback";
+<span class="cstat-no" title="statement not covered" >    var mentions = meta.content.match(Common.mentionsRegex());</span>
+<span class="cstat-no" title="statement not covered" >    if (!$.isEmptyObject(mentions)) {</span>
+<span class="cstat-no" title="statement not covered" >      mentions.map(<span class="fstat-no" title="function not covered" >function(mention){</span></span>
+<span class="cstat-no" title="statement not covered" >        var data_copy = (mention[0] == "@") ? personal : general</span>
+<span class="cstat-no" title="statement not covered" >        data_copy.channel = mention</span>
+<span class="cstat-no" title="statement not covered" >        data_copy = JSON.stringify(data_copy);</span>
+<span class="cstat-no" title="statement not covered" >        $.ajax({url: Config.slackZhishiChannel, type: 'POST', data: data_copy });</span>
+      });
+    }
+  }
+}
+export default Common;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Apr 10 2016 13:35:50 GMT+0100 (WAT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

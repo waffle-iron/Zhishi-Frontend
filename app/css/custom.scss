@@ -5,6 +5,7 @@ $tablet-width: 768px;
 $desktop-width: 1024px;
 $light-grey: #F1F1F1;
 $accent-color: #008b67;
+$roboto: "Roboto", "Lato", sans-serif;
 
 @mixin mobile {
   @media (min-width: #{100px}) and (max-width: #{$mobile-width}) {
@@ -29,7 +30,49 @@ $accent-color: #008b67;
     @content;
   }
 }
+.ui.profile-tags {
+    width: 100%;
+    position: relative;
+    height: 200px;
+    .subscribed {
+      position: absolute;
+      top:0;
+      left:0;
+      margin:0;
+    }
+    .addmore{
+      position: absolute;
+      top:0;
+      right:0;
+      margin:0;
+    }
+}
+.column.tag-buttons{
+  height:40px;
+  button{
+    margin: 5px
+  }
+}
+.ui.divider{
+  margin-left:0;
+  margin-right:0;
+}
+h2.headers {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-family: $roboto;
+  text-align: center;
+}
 
+.settings{
+  padding: 0 10px;
+  label{
+      font-size: 15px;
+    }
+  .ui.checkbox{
+    vertical-align: middle;
+  }
+}
 .thumb {
     width: 30px !important;
 }
@@ -432,6 +475,7 @@ blockquote {
       }
     }
   }
+<<<<<<< 8e9c9e59a207830acce00997ac2ce246be55894f
 }
 $primary-color: #225be2;
 $body_color: #656363;
@@ -457,6 +501,7 @@ $accent-color: #008b67;
   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
     @content;
   }
+
 }
 
 @mixin desktop {
@@ -797,7 +842,6 @@ blockquote {
   color: #444;
 }
 .ui.card.user {
-  margin: 0 auto;
 }
 .sign-in-area {
   .messages {

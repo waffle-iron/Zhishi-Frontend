@@ -5,6 +5,7 @@ module.exports = {
   getQuestions: function(page) {
     page = page || 1
     webAPI.processRequest("/questions", "GET", {page: page}, (data) => {
+      console.log(data.questions);
       QuestionActions.receiveQuestions({questions: data.questions , page: page})
     });
   }

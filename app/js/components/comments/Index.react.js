@@ -24,7 +24,7 @@ import Common from "../../utils/Common"
 class AllComments extends React.Component {
   constructor(props, context){
     super(props)
-    this.state = getCommentsState(props.meta)
+    this.state = getCommentsState(props.meta);
    }
 
    componentDidMount(){

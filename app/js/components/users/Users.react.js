@@ -7,14 +7,14 @@ let retreive_id_from_params = (params_id) => {
 
 
 class Users extends React.Component {
-  constructor(props, context){
+  constructor(props){
     super(props);
   }
 
   render(){
     return (
       <div className="full-height">
-        {this.props.children && React.cloneElement(this.props.children, {
+    {this.props.children && React.cloneElement(this.props.children, {
           user_id: retreive_id_from_params(this.props.params.id)
         })}
       </div>

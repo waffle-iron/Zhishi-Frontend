@@ -27,6 +27,6 @@ module.exports = keyMirror({
   TAG_BATCH_UPDATE: null,
   RECEIVE_SEARCH_RESULTS: null,
   RECEIVE_USER: null,
-  CURRENT_USER_UPDATE: null
-
+  CURRENT_USER_UPDATE: null,
+  RECEIVE_USER_TAGS: null
 });

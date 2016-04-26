@@ -1,6 +1,5 @@
 import React from "react"
 
-
 let retreive_id_from_params = (params_id) => {
   return params_id ? (params_id.substring(0, params_id.indexOf('-'))) : params_id
 }

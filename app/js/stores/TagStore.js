@@ -1,8 +1,8 @@
-var AppDispatcher = require('../dispatcher/AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
-var ZhishiConstants = require('../constants/ZhishiConstants');
-var assign = require('object-assign');
-import Common from '../utils/Common.js'
+import AppDispatcher from '../dispatcher/AppDispatcher';
+import {EventEmitter} from 'events';
+import ZhishiConstants from '../constants/ZhishiConstants';
+import assign from 'object-assign';
+import Common from '../utils/Common.js';
 
 var CHANGE_EVENT = 'change';
 
@@ -41,6 +41,15 @@ const updateBatchTags = (tags=[]) => {
   })
 }
 
+var CHANGE_EVENT = 'change';
+
+var userTags = [];
+
+let loadUserTags = results => {
+  console.log(results);
+  userTags = results.reverse();
+};
+
 var TagStore = assign({}, EventEmitter.prototype, {
 
   getAllTags: function() {
@@ -54,6 +63,9 @@ var TagStore = assign({}, EventEmitter.prototype, {
   tags_loaded: function() {
     return _tags_loaded;
   },
+  getUserTags: function() {
+    return userTags;
+  },
 
   emitChange: function() {
     this.emit(CHANGE_EVENT);
@@ -66,11 +78,9 @@ var TagStore = assign({}, EventEmitter.prototype, {
   removeChangeListener: function(callback) {
     this.removeListener(CHANGE_EVENT, callback);
   }
-
-})
+});
 
 TagStore.dispatchToken = AppDispatcher.register(function(action) {
-
   switch (action.actionType) {
     case ZhishiConstants.TAG_INDEX:
       if (action.data) {
@@ -95,16 +105,21 @@ TagStore.dispatchToken = AppDispatcher.register(function(action) {
 
     case ZhishiConstants.TAG_BATCH_UPDATE:
       if (action.data) {
-        updateBatchTags(action.data)
+        updateBatchTags(action.data);
       }
-      debugger;
       TagStore.emitChange();
       break;
 
     default:
-      break
+      break;
+    case ZhishiConstants.RECEIVE_USER_TAGS:
+      if (action.data) {
+        loadUserTags(action.data);
+      }
+      TagStore.emitChange();
+      break;
 
   }
-})
+});
 
 export default TagStore;

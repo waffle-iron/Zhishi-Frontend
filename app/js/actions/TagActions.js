@@ -1,6 +1,5 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import ZhishiConstants from '../constants/ZhishiConstants';
-import Common from '../utils/Common.js'
 
 let TagActions;
 
@@ -24,6 +23,12 @@ TagActions = {
       actionType: ZhishiConstants.TAG_BATCH_UPDATE,
       data: tags
     })
+  },
+  receiveUserTags: function(data) {
+    AppDispatcher.dispatch({
+      actionType: ZhishiConstants.RECEIVE_USER_TAGS,
+      data: data
+    });
   }
 }
 export default TagActions;

@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js/stores/AuthStore.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/stores/</a> AuthStore.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.29% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/59</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.29% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.26% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.93% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/56</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import CVar from "../config/CookieVariables.js"<span class="branch-0 cbranch-no" title="branch not covered" ></span>
+var AppDispatcher = require('../dispatcher/AppDispatcher');
+var EventEmitter = require('events').EventEmitter;
+var ZhishiConstants = require('../constants/ZhishiConstants');
+var assign = require('object-assign');
+&nbsp;
+var CHANGE_EVENT = 'change';
+&nbsp;
+var _shown_form = "login", _error_msg = "";
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >function setShownForm(text) {</span>
+<span class="cstat-no" title="statement not covered" >  _shown_form = text;</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function setCurrentUser(user) {</span>
+<span class="cstat-no" title="statement not covered" >  var cookie_meta = get_cookie_meta()</span>
+<span class="cstat-no" title="statement not covered" >  $.cookie(CVar.current_user, JSON.stringify(user) || "", cookie_meta);</span>
+<span class="cstat-no" title="statement not covered" >  $.cookie(CVar.user_logged_in, (userToken() ? true : false), cookie_meta);</span>
+&nbsp;
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function userToken(){</span>
+<span class="cstat-no" title="statement not covered" >  return JSON.parse($.cookie(CVar.current_user) || "{}").api_key;</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function setErrorMessage(_error) {</span>
+<span class="cstat-no" title="statement not covered" >  _error_msg = "Invalid details. Please cross-check";</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function setUserLoginStatus(status){</span>
+<span class="cstat-no" title="statement not covered" >  $.cookie(CVar.user_logged_in, status);</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function update(id, updates) {</span>
+<span class="cstat-no" title="statement not covered" >  _users[id] = assign({}, _users[id], updates);</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function updateAll(updates) {</span>
+<span class="cstat-no" title="statement not covered" >  for (var id in _users) {</span>
+<span class="cstat-no" title="statement not covered" >    update(id, updates);</span>
+  }
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function logoutUser() {</span>
+<span class="cstat-no" title="statement not covered" >  $.removeCookie(CVar.current_user);</span>
+<span class="cstat-no" title="statement not covered" >  $.removeCookie(CVar.user_logged_in);</span>
+}
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >function get_cookie_meta(){</span>
+<span class="cstat-no" title="statement not covered" >  var currentDate = new Date();</span>
+<span class="cstat-no" title="statement not covered" >  var expirationDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate()+1, 0, 0, 0);</span>
+<span class="cstat-no" title="statement not covered" >  return {path: '/', expires: expirationDate}</span>
+}
+&nbsp;
+var AuthStore = assign({}, EventEmitter.prototype, {
+&nbsp;
+  getShownForm: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >    return _shown_form;</span>
+  },
+  getCurrentUser: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >    return JSON.parse($.cookie(CVar.current_user) || "{}");</span>
+  },
+  getCurrentUserToken: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >    return userToken();</span>
+  },
+  getErrorMessage: <span class="fstat-no" title="function not covered" >function(){</span>
+<span class="cstat-no" title="statement not covered" >    var _msg = _error_msg</span>
+<span class="cstat-no" title="statement not covered" >    _error_msg = "";</span>
+<span class="cstat-no" title="statement not covered" >    return _msg;</span>
+  },
+&nbsp;
+  userLoggedIn: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >    return $.cookie(CVar.user_logged_in) ;</span>
+  },
+&nbsp;
+  emitChange: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >    this.emit(CHANGE_EVENT);</span>
+  },
+&nbsp;
+  addChangeListener: <span class="fstat-no" title="function not covered" >function(callback) {</span>
+<span class="cstat-no" title="statement not covered" >    this.on(CHANGE_EVENT, callback);</span>
+  },
+&nbsp;
+  removeChangeListener: <span class="fstat-no" title="function not covered" >function(callback) {</span>
+<span class="cstat-no" title="statement not covered" >    this.removeListener(CHANGE_EVENT, callback);</span>
+  }
+});
+&nbsp;
+AuthStore.dispatchToken = AppDispatcher.register(<span class="fstat-no" title="function not covered" >function(action) {</span>
+<span class="cstat-no" title="statement not covered" >  switch(action.actionType) {</span>
+&nbsp;
+    case ZhishiConstants.AUTH_FORM_SELECTED:
+<span class="cstat-no" title="statement not covered" >      setShownForm(action.data);</span>
+<span class="cstat-no" title="statement not covered" >      AuthStore.emitChange();</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
+&nbsp;
+    case ZhishiConstants.AUTH_LOG_IN:
+<span class="cstat-no" title="statement not covered" >      if (!AuthStore.userLoggedIn() &amp;&amp; action.data) {</span>
+<span class="cstat-no" title="statement not covered" >        setCurrentUser(action.data);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      break;</span>
+&nbsp;
+    case ZhishiConstants.AUTH_LOG_IN_ERROR:
+<span class="cstat-no" title="statement not covered" >      setErrorMessage(action._error)</span>
+<span class="cstat-no" title="statement not covered" >      AuthStore.emitChange();</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
+&nbsp;
+    case ZhishiConstants.AUTH_LOG_OUT:
+<span class="cstat-no" title="statement not covered" >      logoutUser();</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
+&nbsp;
+    default:
+      // nothing for now
+  }
+});
+&nbsp;
+module.exports = AuthStore;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Mar 26 2016 13:22:10 GMT+0100 (WAT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

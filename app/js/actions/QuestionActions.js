@@ -1,12 +1,14 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import ZhishiConstants from '../constants/ZhishiConstants';
-import Common from '../utils/Common.js'
+import Common from '../utils/Common.js';
+import QuestionStore from '../stores/QuestionStore';
 
 var QuestionActions;
 
-var waitForQuestionStore =  function(){
-  if (AppDispatcher._isDispatching) { AppDispatcher.waitFor([QuestionStore.dispatchToken]) }
-}
+var waitForQuestionStore = function() {
+  if (AppDispatcher.isDispatching()) AppDispatcher.waitFor([QuestionStore.dispatchToken]);
+
+};
 
 QuestionActions = {
   createQuestion: (question) => {
