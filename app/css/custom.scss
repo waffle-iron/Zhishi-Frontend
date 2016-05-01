@@ -47,6 +47,27 @@ $roboto: "Roboto", "Lato", sans-serif;
       margin:0;
     }
 }
+.answers > .row {
+  .column{
+    box-shadow:  1px 0px 0px 0px rgba(34, 36, 38, 0.15) !important;
+  }
+}
+.answer-col{
+  padding-top:0 !important;
+  p {
+    .right-text {
+    float: right;
+    font-size: 10px;
+    font-weight: normal;
+    }
+    &.content{
+      font-weight:normal
+    }
+    font-weight: bold;
+
+  }
+
+}
 .column.tag-buttons{
   height:40px;
   button{
@@ -475,7 +496,6 @@ blockquote {
       }
     }
   }
-<<<<<<< 8e9c9e59a207830acce00997ac2ce246be55894f
 }
 $primary-color: #225be2;
 $body_color: #656363;

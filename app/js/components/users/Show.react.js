@@ -8,18 +8,21 @@ import AuthStore from '../../stores/AuthStore.js'
 import webAPI from '../../utils/webAPI.js'
 import QuestionStore from '../../stores/QuestionStore.js'
 import TagStore from '../../stores/TagStore.js'
-import TagActions from '../../actions/TagActions.js'
+import TagActions from '../../actions/TagActions.js';
+import QuestionActions from '../../actions/QuestionActions.js';
+
+import SettingsSection from './Settings.react';
+import ProfileTagSection from './ProfileTag.react';
+import UserAnswers from './UserAnswers.react';
+
 import QuestionsList from '../questions/QuestionsList.react'
-import ZhishiInit from '../../utils/ZhishiInit'
+import QuestionsListItem from '../questions/QuestionsListItem.react'
+
 
 
 function getHomeState(){
   return {
-    questions: QuestionStore.getQuestions(),
-    top_questions: QuestionStore.getTopQuestions(),
-    current_user: AuthStore.getCurrentUser(),
-    should_fetch: QuestionStore.shouldFetchQuestions(),
-    current_page: QuestionStore.getCurrentPage()
+    userQuestions: QuestionStore.retrieveUserQuestions()
   }
 }
 
@@ -38,12 +41,14 @@ class Show extends React.Component {
   constructor(props, context){
     super(props);
     this.state = getUserState(props.user_id);
+
   }
   componentWillMount() {
-    ZhishiInit.getQuestions();
     webAPI.processRequest(`/users/${this.props.user_id}/tags`, "GET", null, (data) => {
-      debugger;
       TagActions.receiveUserTags(data.tags);
+    });
+    webAPI.processRequest(`/users/${this.props.user_id}/questions`, "GET", null, (data) => {
+      QuestionActions.recieveUserQuestions(data);
     });
   }
   componentDidMount(){
@@ -53,15 +58,22 @@ class Show extends React.Component {
   }
   componentWillUnmount(){
     UserStore.removeChangeListener(this._onChange).bind(this);
+    QuestionStore.removeChangeListener(this._onChange.bind(this));
+
   }
   _onChange() {
-    this.setState(getUserState(this.props.user_id))
+    this.setState(getUserState(this.props.e))
     this.setState(getHomeState());
 
   }
+  createUserQuestionsDiv(question, index){
+      return (<QuestionsListItem key={index} question={question} />);
+  }
+  userAnswers(question, index){
+    return (<UserAnswers />);
+  }
   render(){
     let current_user = this.state.current_user;
-    let user = this.state.user || {};
     return (
       <div className="main-wrapper">
         <Header />
@@ -85,72 +97,33 @@ class Show extends React.Component {
                 <h2>
                   {current_user.name}
                 </h2>
-                <div className="ui card profile-tags">
-                  <div className="content">
-                    <div className="column tag-buttons">
-                    <button className="ui button subscribed">Subscribed tags
-                    </button>
-                    <button className="ui primary button addmore">
-                    Add more
-                    </button>
-                    </div>
-                    <div className="column tag-buttons">
-                    <button className="ui button">Amity </button>
-                    <button className="ui button">Amity </button>
-                    <button className="ui button">Amity </button>
-                    <button className="ui button">Amity </button>
-                    <button className="ui button">Amity </button>
-                    <button className="ui button">Amity </button>
-                    <button className="ui button">Amity </button>
-                    <button className="ui button">Amity </button>
-                    </div>
-                  </div>
-                </div>
+                <ProfileTagSection />
               </div>
-            <aside className="four wide computer only column">
-              <div className="sidebar wide column row">
-              <h2 className="headers"> Settings</h2>
-              <div className="ui divider"></div>
-                <div className="ui grid two column row settings">
-                <div className="column">
-                <label>Notifications: </label>
-                </div>
-                <div className="column">
-                  <div className="ui test toggle checkbox">
-                    <input type="checkbox" checked="checked"/>
-                    <label></label>
-                  </div>
-                  </div>
-                </div>
-              <div className="ui divider"></div>
-              <div className="ui grid  two column row settings">
-                <div className="column">
-                <label>Newsletter: </label>
-                </div>
-                <div className="column">
-                  <div className="ui test toggle checkbox">
-                    <input type="checkbox" checked="checked"/>
-                    <label></label>
-                  </div>
-                  </div>
-                </div>
-                <div className="ui divider"></div>
-
-              </div>
-              </aside>
-
+            <SettingsSection />
 
           </div>
-         <div className="ui divider"></div>
 
           <div className="ui grid">
             <div className="sixteen wide tablet twelve wide computer column">
+                     <div className="ui divider"></div>
               <h2>Top Questions</h2>
-          <QuestionsList questions={this.state.questions} current_page={1} />
+            {this.state.userQuestions ? this.state.userQuestions.splice(0,2).map(this.createUserQuestionsDiv) : `<div />`}
           </div>
           </div>
 
+          <div className="ui grid">
+            <div className="sixteen wide tablet twelve wide computer column">
+                <div className="ui divider"></div>
+                <h2>Top Answers</h2>
+                {[1,3].map(this.userAnswers)}
+            </div>
+          </div>
+
+
+
+
         </main>
+
         <Footer />
 
       </div>

@@ -71,7 +71,7 @@ ReactDOM.render(
     <Route path="/logout" onEnter={log_out} />
 
     <Route path="/login" component={Login} onEnter={user_logged_out} >
-    <Route path="/login/auth" onEnter={SignUpUser} />
+      <Route path="/login/auth" onEnter={SignUpUser} />
     </Route>
     <Route path="/" component={Zhishi} onEnter={user_logged_in} >
 

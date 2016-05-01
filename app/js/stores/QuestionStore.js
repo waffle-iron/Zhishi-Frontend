@@ -8,12 +8,16 @@ import Common from '../utils/Common.js'
 var CHANGE_EVENT = 'change';
 
 var _questions = {}, _top_questions = {}, page_mapping = {}, current_page=1, shouldFetch = true;
+var _userQuestions = [];
 
 
 let loadQuestions = (questions) => {
   if ((typeof questions !== "undefined") && questions) {
-    assign(_questions, Common.serializeByKey(questions))
+    assign(_questions, Common.serializeByKey(questions));
   }
+}
+let loadUserQuestions = questions => {
+  _userQuestions = questions;
 }
 
 let loadTopQuestions = (top_questions) => {
@@ -63,6 +67,9 @@ let QuestionStore = assign({}, EventEmitter.prototype, {
     var questions = ids ? retrieveQuestions(ids) : _questions;
     return questions;
   },
+  retrieveUserQuestions: () => {
+    return _userQuestions;
+  },
 
   getTopQuestions: () => {
     return _top_questions
@@ -111,6 +118,10 @@ QuestionStore.dispatchToken = AppDispatcher.register((action) => {
 
     case ZhishiConstants.RECEIVE_TOP_QUESTIONS:
       loadTopQuestions(action.data.questions);
+      QuestionStore.emitChange();
+      break;
+    case ZhishiConstants.RECEIVE_USER_QUESTIONS:
+      loadUserQuestions(action.data.questions);
       QuestionStore.emitChange();
       break;
 

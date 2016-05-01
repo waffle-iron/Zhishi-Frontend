@@ -24,6 +24,14 @@ QuestionActions = {
       data: data
     });
   },
+  recieveUserQuestions: data => {
+    waitForQuestionStore();
+    AppDispatcher.dispatch({
+      actionType: ZhishiConstants.RECEIVE_USER_QUESTIONS,
+      data: data
+    });
+  },
+
 
   receiveQuestion: (question, new_question) => {
     waitForQuestionStore();
