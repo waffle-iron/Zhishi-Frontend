@@ -20,7 +20,7 @@ AuthActions = {
         data: data
       });
     }
-    AuthActions.redirectToReferrerIfAny()
+    AuthActions.redirectToReferrerIfAny();
   },
 
   logoutUser: function() {

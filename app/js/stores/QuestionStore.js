@@ -2,8 +2,8 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var ZhishiConstants = require('../constants/ZhishiConstants');
 var assign = require('object-assign');
-import AnswerStore from './AnswerStore.js'
-import Common from '../utils/Common.js'
+import AnswerStore from './AnswerStore.js';
+import Common from '../utils/Common.js';
 
 var CHANGE_EVENT = 'change';
 
@@ -134,7 +134,9 @@ QuestionStore.dispatchToken = AppDispatcher.register((action) => {
 
     case ZhishiConstants.QUESTION_UPDATE:
       if (action.data) {
-        if (AppDispatcher._isDispatching) { AppDispatcher.waitFor([AnswerStore.dispatchToken]) }
+        if (AppDispatcher.isDispatching()) {
+          AppDispatcher.waitFor([AnswerStore.dispatchToken]);
+        }
         update(action.data)
         QuestionStore.emitChange();
       }

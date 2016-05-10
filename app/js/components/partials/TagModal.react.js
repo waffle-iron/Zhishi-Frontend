@@ -96,6 +96,7 @@ class TagModal extends React.Component {
   }
 
   render () {
+    debugger;
     let view_tags = [], keys = [], valid_count = 3;
     const { tags, selected_tags } = this.state;
 
