@@ -18,6 +18,7 @@ import Common from "../../utils/Common.js"
 
 function getQuestionState(question_id){
   if (QuestionStore.getQuestion(question_id)) {
+    console.log('HERE', question_id);
     return {
       question: QuestionStore.getQuestion(question_id)
     }
@@ -74,6 +75,10 @@ class Question extends React.Component {
     webAPI.processRequest(`/questions/${id}`, 'PATCH', this.questionData(), QuestionActions.receiveQuestion, edit_btn)
     Common.removeTinyMce('.question');
     $(".question-title").popup('hide');
+  }
+
+  deleteQuestion(id) {
+    console.log('DELETE', id)
   }
 
   questionData(){

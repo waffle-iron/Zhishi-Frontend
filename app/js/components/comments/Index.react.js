@@ -9,21 +9,20 @@ import Common from "../../utils/Common"
 
  function getCommentsState(meta){
    var comments = CommentStore.getComments(meta.resource_name, meta.resource_id)
+   console.log('Comments', comments);
    if (comments) {
      return { comments: comments }
    } else {
      if (meta.resource_id) {
-      //  webAPI.processRequest(`/${meta.resource_name}/${meta.resource_id}/comments`, 'GET', "", (data) => {
-      //    CommentActions.receiveComments({meta: meta, comments: data})
-      //  })
      }
      return {}
    }
  }
 
 class AllComments extends React.Component {
-  constructor(props, context){
+  constructor(props){
     super(props)
+    console.log('PROPS', this.props);
     this.state = getCommentsState(props.meta)
    }
 
