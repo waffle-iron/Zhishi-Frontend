@@ -39,6 +39,7 @@ var webAPI = {
         }
       }.bind(this),
       success: function(data) {
+        console.log('WOI', data);
         callback(data);
       }.bind(this),
       error: function(xhr, status, err) {

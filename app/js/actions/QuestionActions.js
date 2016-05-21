@@ -3,13 +3,13 @@ import ZhishiConstants from '../constants/ZhishiConstants';
 import Common from '../utils/Common.js';
 import QuestionStore from '../stores/QuestionStore';
 
-var QuestionActions;
+// var QuestionActions;
 
 var waitForQuestionStore =  function() {
   if (AppDispatcher._isDispatching) { AppDispatcher.waitFor([QuestionStore.dispatchToken]) }
 }
 
-QuestionActions = {
+var QuestionActions = {
   createQuestion: (question) => {
     // QuestionActions.sendQuestionsToSlack(question)
     QuestionActions.receiveQuestion(question)
@@ -71,6 +71,13 @@ QuestionActions = {
       let personal = `${prefix[parseInt(Math.random() * 4)]}! ${question.user.name} just asked a question and mentioned you.`
       Common.sendToSlack({id: question.id, title: question.title, content: question.content, intro: {general: general, personal: personal}})
     }
+  },
+
+  deleteQuestion: (data) => {
+    AppDispatcher.dispatch({
+      actionType: ZhishiConstants.QUESTION_DELETE,
+      data: data
+    });
   }
 }
 

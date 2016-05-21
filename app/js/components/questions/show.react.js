@@ -10,6 +10,7 @@ import Votes from "../layouts/Votes.react"
 import ShareButton from "../layouts/ShareButton.react"
 import webAPI from '../../utils/webAPI.js'
 import AuthStore from '../../stores/AuthStore.js'
+import DeleteButton from '../layouts/Delete.react.js'
 
 import AnswerStore from '../../stores/AnswerStore.js'
 import QuestionStore from '../../stores/QuestionStore.js'
@@ -18,7 +19,7 @@ import Common from "../../utils/Common.js"
 
 function getQuestionState(question_id){
   if (QuestionStore.getQuestion(question_id)) {
-    console.log('HERE', question_id);
+    console.log('SWALI', QuestionStore.getQuestion(question_id))
     return {
       question: QuestionStore.getQuestion(question_id)
     }
@@ -30,11 +31,14 @@ function getQuestionState(question_id){
   }
 }
 
+
+
 class Question extends React.Component {
 
-  constructor(props, context){
+  constructor(props){
     super(props)
     this.state = getQuestionState(props.question_id)
+    this.props = this.props;
   }
 
   componentDidMount(){
@@ -44,6 +48,7 @@ class Question extends React.Component {
     QuestionStore.removeChangeListener(this._onChange).bind(this);
   }
   _onChange() {
+    console.log(this.state);
     this.setState(getQuestionState(this.props.question_id), this.initShowPage)
   }
 
@@ -77,8 +82,8 @@ class Question extends React.Component {
     $(".question-title").popup('hide');
   }
 
-  deleteQuestion(id) {
-    console.log('DELETE', id)
+  deleteQuestion() {
+    console.log(this.props.question_id);
   }
 
   questionData(){
@@ -97,12 +102,12 @@ class Question extends React.Component {
     var share_statement = `You can past this link on slack or send directly via email: http://${window.location.host + window.location.pathname}`;
     var question_dom_id = `question-${question.id}`;
     var text_to_copy = `http://${window.location.host + window.location.pathname}`;
-    var edit_tip = "You can click on the question title to edit it."
+    var edit_tip = "You can click on the question title to edit it.";
     var title_editor_class = question.status != '' ? 'editing editor-title' : ''
     var comments_meta = {question_id: this.props.question_id, resource_name: "questions", resource_id: this.props.question_id}
     if (current_user.id == user.id) {
       question_edit_btn = <a href="#" className="item" onClick={this.editQuestion.bind(this)}>edit</a>
-      question_delete_btn = <a href="#" className="item">delete</a>
+      question_delete_btn = <DeleteButton id={this.props.question_id}/>
     }
     return(
       <div className="question-thread">
